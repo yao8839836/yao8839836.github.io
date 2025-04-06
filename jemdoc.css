@@ -289,3 +289,14 @@ table.imgtable {
 table.imgtable td {
 	border: currentColor; border-image: none; text-align: left;
 }
+
+
+#clustrmaps-container {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto; /* 居中显示 */
+}
+#clustrmaps {
+      width: 100%;
+      height: 100%;
+}
