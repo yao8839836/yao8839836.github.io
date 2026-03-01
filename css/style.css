@@ -675,6 +675,30 @@ a:hover {
   margin-top: 0.15rem;
 }
 
+.member-links {
+  margin-top: 0.4rem;
+}
+
+.member-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.55rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  transition: var(--transition);
+}
+
+.member-links a:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
 /* ===== Lab Standalone Page ===== */
 .lab-hero {
   padding-top: 60px;
