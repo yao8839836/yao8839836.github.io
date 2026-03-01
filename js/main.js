@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ['sections/recruiting.html',   'section-recruiting'],
     ['sections/news.html',         'section-news'],
     ['sections/publications.html', 'section-publications'],
-    ['sections/lab.html',          'section-lab'],
     ['sections/services.html',     'section-services'],
     ['sections/awards.html',       'section-awards'],
   ];

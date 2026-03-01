@@ -25,7 +25,8 @@
   --color-highlight: #0066cc;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: 'Crimson Pro', 'Georgia', serif;
-  --max-width: 860px;
+  --max-width: 680px;
+  --page-width: 680px;
   --radius: 12px;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
@@ -45,6 +46,8 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: var(--page-width);
+  margin: 0 auto;
 }
 
 a {
@@ -59,21 +62,19 @@ a:hover {
 
 /* ===== Navigation ===== */
 .nav-bar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
   transition: var(--transition);
+  width: 100%;
 }
 
 .nav-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  width: 100%;
   padding: 0 2rem;
   display: flex;
   align-items: center;
@@ -124,14 +125,13 @@ a:hover {
 
 /* ===== Layout ===== */
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  width: 100%;
   padding: 0 2rem;
 }
 
 /* ===== Hero Section ===== */
 .hero {
-  padding-top: 120px;
+  padding-top: 80px;
   padding-bottom: 4rem;
   position: relative;
 }
@@ -142,15 +142,16 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  height: 320px;
+  bottom: 0;
   background: linear-gradient(135deg, #f0f4f8 0%, #e8f0fe 50%, #f5f0ff 100%);
+  border-radius: 0 0 var(--radius) var(--radius);
   z-index: -1;
 }
 
 .hero-content {
   display: flex;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .hero-photo {
@@ -158,8 +159,8 @@ a:hover {
 }
 
 .hero-photo img {
-  width: 180px;
-  height: 230px;
+  width: 150px;
+  height: 195px;
   object-fit: cover;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
@@ -172,7 +173,7 @@ a:hover {
 }
 
 .hero-name {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: -0.03em;
@@ -219,8 +220,8 @@ a:hover {
 .hero-links a {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 1rem;
+  gap: 0.35rem;
+  padding: 0.35rem 0.8rem;
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: 100px;
@@ -237,6 +238,10 @@ a:hover {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
+}
+
+.hero-links a .link-icon {
+  font-size: 0.8rem;
 }
 
 /* ===== Sections ===== */
@@ -383,7 +388,7 @@ a:hover {
 }
 
 .slider-card {
-  flex: 0 0 250px;
+  flex: 0 0 200px;
   scroll-snap-align: start;
   background: var(--color-card);
   border: 1px solid var(--color-border);
@@ -605,15 +610,15 @@ a:hover {
 
 .lab-members-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 0.8rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
 }
 
 .lab-member-card {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  padding: 0.9rem 1.1rem;
+  gap: 0.7rem;
+  padding: 0.7rem 0.9rem;
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -628,8 +633,8 @@ a:hover {
 
 .member-avatar {
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-accent-light), #e0d4f7);
   color: var(--color-secondary);
@@ -647,7 +652,7 @@ a:hover {
 }
 
 .member-name {
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-primary);
   line-height: 1.3;
@@ -665,12 +670,136 @@ a:hover {
 }
 
 .member-period {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-text-muted);
   margin-top: 0.15rem;
 }
 
+/* ===== Lab Standalone Page ===== */
+.lab-hero {
+  padding-top: 60px;
+  padding-bottom: 2.5rem;
+}
 
+.lab-hero::before {
+  height: 200px;
+}
+
+.lab-page-header {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.lab-page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+}
+
+.lab-page-title .hl {
+  color: var(--color-accent);
+  font-weight: 800;
+}
+
+.lab-page-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* Leader Card */
+.leader-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.leader-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #c8d6e5;
+}
+
+.leader-photo {
+  flex-shrink: 0;
+}
+
+.leader-photo img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  border: 3px solid var(--color-white);
+}
+
+.leader-info {
+  flex: 1;
+}
+
+.leader-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.2rem;
+}
+
+.leader-name a {
+  color: var(--color-primary);
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.leader-name a:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.leader-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-secondary);
+  margin-bottom: 0.15rem;
+}
+
+.leader-affiliation {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.leader-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.leader-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.65rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  transition: var(--transition);
+}
+
+.leader-links a:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
 
 /* ===== Footer ===== */
 .footer {
@@ -683,6 +812,10 @@ a:hover {
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+
   .hero-content {
     flex-direction: column;
     align-items: center;
@@ -710,7 +843,11 @@ a:hover {
   }
 
   .slider-card {
-    flex: 0 0 220px;
+    flex: 0 0 200px;
+  }
+
+  .lab-members-grid {
+    grid-template-columns: 1fr;
   }
 }
 
