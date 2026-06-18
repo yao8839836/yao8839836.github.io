@@ -857,6 +857,7 @@ a:hover {
 }
 
 .visitor-map-content > div,
+.visitor-map-content a,
 .visitor-map-content iframe,
 .visitor-map-content canvas,
 .visitor-map-content img {
