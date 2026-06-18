@@ -75,56 +75,8 @@
     <div class="container">
       <div class="visitor-map-wrapper">
         <h3 class="visitor-map-title">🌍 Visitors</h3>
-        <div class="visitor-map-content" id="visitor-map-content">
-          <div class="visitor-map-fallback" id="visitor-map-fallback" role="img" aria-label="Visitor map">
-            <div class="visitor-map-local" aria-hidden="true">
-              <span class="visitor-map-land land-americas"></span>
-              <span class="visitor-map-land land-europe-africa"></span>
-              <span class="visitor-map-land land-asia"></span>
-              <span class="visitor-map-land land-australia"></span>
-              <span class="visitor-dot dot-us"></span>
-              <span class="visitor-dot dot-eu"></span>
-              <span class="visitor-dot dot-cn"></span>
-              <span class="visitor-dot dot-au"></span>
-            </div>
-            <img
-              class="visitor-map-fallback-img"
-              src="https://www.clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=w1TdFxbfGwd4A0ra_LEpcS-uYbsESsi_8kd0HMe4p6g&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"
-              alt=""
-              width="300"
-              height="180"
-              loading="lazy"
-              onerror="this.hidden = true"
-            >
-          </div>
-          <script type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=w1TdFxbfGwd4A0ra_LEpcS-uYbsESsi_8kd0HMe4p6g&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"></script>
-          <script>
-            (function () {
-              const container = document.getElementById('visitor-map-content');
-              const fallback = document.getElementById('visitor-map-fallback');
-              if (!container || !fallback) return;
-              const fallbackImage = fallback.querySelector('.visitor-map-fallback-img');
-              if (fallbackImage) {
-                fallbackImage.addEventListener('error', () => {
-                  fallbackImage.hidden = true;
-                });
-              }
-
-              const hasRenderedWidget = () => Array.from(container.children).some((child) => {
-                return child !== fallback
-                  && child.tagName !== 'SCRIPT'
-                  && child.offsetWidth > 0
-                  && child.offsetHeight > 0;
-              });
-
-              const syncFallback = () => {
-                fallback.hidden = hasRenderedWidget();
-              };
-
-              syncFallback();
-              window.setTimeout(syncFallback, 800);
-            })();
-          </script>
+        <div class="visitor-map-content">
+          <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=w1TdFxbfGwd4A0ra_LEpcS-uYbsESsi_8kd0HMe4p6g&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
         </div>
       </div>
     </div>
