@@ -864,6 +864,122 @@ a:hover {
   max-width: 100%;
 }
 
+.visitor-map-fallback {
+  position: relative;
+  display: block;
+  width: min(300px, 100%);
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+}
+
+.visitor-map-fallback[hidden] {
+  display: none;
+}
+
+.visitor-map-local,
+.visitor-map-fallback-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.visitor-map-local {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 24% 34%, rgba(58, 204, 58, 0.25), transparent 12%),
+    radial-gradient(circle at 70% 42%, rgba(255, 83, 83, 0.22), transparent 10%),
+    linear-gradient(180deg, #eef7fb 0%, #d7edf6 100%);
+}
+
+.visitor-map-fallback-img {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  background: var(--color-card);
+}
+
+.visitor-map-fallback-img[hidden] {
+  display: none;
+}
+
+.visitor-map-land,
+.visitor-dot {
+  position: absolute;
+  display: block;
+}
+
+.visitor-map-land {
+  background: #6fb58d;
+  opacity: 0.9;
+  filter: drop-shadow(0 1px 0 rgba(45, 120, 173, 0.15));
+}
+
+.land-americas {
+  left: 12%;
+  top: 24%;
+  width: 24%;
+  height: 42%;
+  border-radius: 58% 42% 52% 48%;
+  transform: rotate(-16deg);
+}
+
+.land-europe-africa {
+  left: 45%;
+  top: 28%;
+  width: 16%;
+  height: 45%;
+  border-radius: 52% 48% 58% 42%;
+  transform: rotate(8deg);
+}
+
+.land-asia {
+  left: 58%;
+  top: 25%;
+  width: 26%;
+  height: 34%;
+  border-radius: 46% 54% 48% 52%;
+  transform: rotate(8deg);
+}
+
+.land-australia {
+  left: 72%;
+  top: 65%;
+  width: 11%;
+  height: 10%;
+  border-radius: 55% 45% 50% 50%;
+  transform: rotate(10deg);
+}
+
+.visitor-dot {
+  width: 7px;
+  height: 7px;
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  background: #ff5353;
+  box-shadow: 0 0 0 2px rgba(255, 83, 83, 0.25);
+}
+
+.dot-us {
+  left: 23%;
+  top: 42%;
+}
+
+.dot-eu {
+  left: 51%;
+  top: 36%;
+}
+
+.dot-cn {
+  left: 71%;
+  top: 43%;
+}
+
+.dot-au {
+  left: 78%;
+  top: 69%;
+}
+
 /* ===== Footer ===== */
 .footer {
   text-align: center;
